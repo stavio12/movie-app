@@ -43,11 +43,13 @@
     <div>{{$crew['name']}}</div>
     <div class="text-sm text-gray-400"> {{$crew["job"]}} </div>
   </div>
+  {{-- for making permoance much better --}}
+  @else
+  @break
 @endif
 
 @endforeach
 
- 
 
   
   </div>
@@ -63,6 +65,7 @@
     Play Trailer
   </a>
 </div>
+
 @endif
 
 
@@ -102,6 +105,7 @@ Cast
 {{$cast['character']}}          </div>
         </div>
     </div>
+
   @endif
   
   @endforeach
@@ -131,6 +135,9 @@ Images  </h2>
         </a>        
  
     </div>
+      {{-- for making permoance much better --}}
+  @else
+  @break
   @endif
   
   @endforeach
