@@ -16,12 +16,12 @@
 <div>
   <div class="mt-8">
 
-      <a href="/movies/{{$show['id']}}"}>
+      <a href="/tvshows/{{$show['id']}}"}>
         <img src={{'https://image.tmdb.org/t/p/w500/' .$show['poster_path']}} alt="" class="hover:opacity-75 tranisition ease-in-out duration-500"> 
       </a> 
          
     <div class="mt-2">
-      <a href="/movies/{{$show['id']}}" class="text-lh-mt-2 hover:text-gray:30">{{$show['name']}}</a>
+      <a href="/tvshows/{{$show['id']}}" class="text-lh-mt-2 hover:text-gray:30">{{$show['name']}}</a>
       <div class="flex items-center text-gray-400 text-sm mt-1">
         <span>start</span>
         <span class="ml-1">{{$show['vote_average']* 10 . '%'}}</span>
@@ -45,10 +45,6 @@
 
 </div><!------End of Popular Actors ---->
 
-<div class="flex justify-between mt-1 mt-16">
-  <a href="#">previous</a>
-  <a href="#">next</a>
-</div>
 
 
 </div>

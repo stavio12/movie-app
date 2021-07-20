@@ -84,6 +84,7 @@
    
   
   </div>
+</div>
 <!----- end cast info ---->
 
 

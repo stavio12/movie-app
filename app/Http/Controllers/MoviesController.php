@@ -99,8 +99,6 @@ return view("index",[
 ->json();
 
 
-
-
         return view('show',["movie"=>$movie]);
     }
 

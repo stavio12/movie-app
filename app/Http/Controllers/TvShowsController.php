@@ -18,7 +18,6 @@ class TvShowsController extends Controller
         ->get('https://api.themoviedb.org/3/tv/popular')
         ->json()["results"];
 
-dump($tvshows);
 
         return view("tvshows.index",["tvshows"=>$tvshows]);
 
@@ -53,7 +52,31 @@ dump($tvshows);
      */
     public function show($id)
     {
-        //
+        $show = Http::withToken(config("services.tmdb.token"))
+        ->get('https://api.themoviedb.org/3/tv/'.$id)
+        ->json();
+
+
+
+        $cast = Http::withToken(config("services.tmdb.token"))
+        ->get('https://api.themoviedb.org/3/tv/'.$id."/credits")
+        ->json();
+
+
+        $genresList = Http::withToken(config("services.tmdb.token"))
+->get('https://api.themoviedb.org/3/genre/movie/list')
+->json()["genres"];
+
+
+
+
+$genres = collect($genresList)->mapWithKeys((function($genre){
+    return [$genre['id']=>$genre["name"]];
+}));
+
+
+
+        return view("tvshows.show",["shows"=>$show, "casts"=>$cast,"genres"=>$genres]);
     }
 
     /**
